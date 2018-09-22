@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="api_key">3e7cc266ae2b0e0d78e279ce8e361736</string>
+    <string name="default_search_text">nature</string>
+    <integer name="per_page_results">50</integer>
+    <string name="base_url">https://api.flickr.com/services/rest/</string>
+    <string name="url" formatted="false" >%s?method=%s&amp;api_key=%s&amp;per_page=%d&amp;format=%s&amp;nojsoncallback=1</string>
+    <string name="method_name">flickr.photos.search</string>
+    <string name="format">json</string>
+
+</resources>

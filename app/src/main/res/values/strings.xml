@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FlickApp</string>
+
+    <!-- Image Search query -->
+    <string name="search_query_hint">Enter keyword to search image</string>
+
+
+
+    <!-- splash -->
+    <string name="dialog_internet_title">No Internet Connection</string>
+    <string name="dialog_internet_desc">Could not connect to internet. Please check the connection and try again.</string>
+
+
+    <!-- error messages -->
+    <string name="generic_error_message">Error loading results. Please try again.</string>
+    <string name="invalid_api_key">Invalid api key. Session expired.</string>
+    <string name="no_results">No results are found. Please try again with another word.</string>
+
+</resources>
