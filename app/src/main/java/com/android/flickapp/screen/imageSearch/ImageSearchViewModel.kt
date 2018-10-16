@@ -3,13 +3,6 @@ package com.android.flickapp.screen.imageSearch
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
-import android.content.Context
-import android.graphics.Bitmap
-import android.os.AsyncTask
-import android.util.Log
-import com.android.flickapp.R
-import com.android.flickapp.base.FlickApp
 import com.android.flickapp.data.model.ImageSearchResponse
 import com.android.flickapp.data.network.ApiClient
 import com.android.flickapp.data.network.ResponseListener
@@ -62,12 +55,12 @@ class ImageSearchViewModel(application: Application) : AndroidViewModel(applicat
     /**
      * loads more images once the scroll reaches the bottom of the grid
      */
-    fun loadMoreImages(lastVisibleItemPosition: Int, pagePerResults: Int,
+    fun loadMoreImages(itemsCount: Int, lastVisibleItemPosition: Int, pagePerResults: Int,
                        lastLoadedPage: Int, nextPageAvailable: Boolean, curSearchText: String): Boolean {
 
         val noOfItemsAtLastTwoRows = 6
         // checks whether scroll has reached the bottom of loaded contents
-        if (lastLoadedPage * pagePerResults - lastVisibleItemPosition < noOfItemsAtLastTwoRows
+        if (itemsCount - lastVisibleItemPosition < noOfItemsAtLastTwoRows
                 && nextPageAvailable) {
 
             return true

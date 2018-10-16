@@ -92,7 +92,10 @@ class ImageSearchActivity : AppCompatActivity() {
                 val lastVisibleItemPosition = (recyclerView?.layoutManager as GridLayoutManager).findLastVisibleItemPosition()
 
 
-                var result = viewModel.loadMoreImages(lastVisibleItemPosition, perPageResult,
+
+                var itemCount = images_grid_view.adapter.itemCount
+
+                var result = viewModel.loadMoreImages(itemCount,lastVisibleItemPosition, perPageResult,
                         lastLoadedPage, nextPageAvailable, curSearchText)
 
                 if(result && !isSearchLoading) {

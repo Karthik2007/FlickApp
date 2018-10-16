@@ -13,7 +13,12 @@ class MemoryCache(var maxsize: Int): LruCache<String, Bitmap?>(maxsize) {
     }
 
     override fun entryRemoved(evicted: Boolean, key: String, oldValue: Bitmap?, newValue: Bitmap?) {
-        //oldValue?.recycle()
+
+        //newValue is not null means the api result has two same images.
+        // so key is same , bitmap shouldn't be recycled otherwise it will lead to crash
+        // as we will be trying to reuse the recycled bitmap
+        if(newValue == null)
+            oldValue?.recycle()
     }
 
 
